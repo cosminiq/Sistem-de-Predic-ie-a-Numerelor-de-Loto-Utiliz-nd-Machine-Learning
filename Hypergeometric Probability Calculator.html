@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypergeometric Probability Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .calculator {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .results {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .results p {
+            margin: 10px 0;
+        }
+        
+        .formula {
+            background-color: #eef6fc;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .error {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hypergeometric Probability Calculator</h1>
+    
+    <div class="calculator">
+        <div class="formula">
+            <p>Formula pentru probabilitatea hipergeometrică:</p>
+            <p>P(X = k) = [C(K,k) × C(N-K,n-k)] / C(N,n)</p>
+            <p>Unde:</p>
+            <ul>
+                <li>N = numărul total de numere</li>
+                <li>K = numărul de numere extrase</li>
+                <li>n = numărul de numere pe care le alegi</li>
+                <li>k = numărul de numere pe care vrei să le nimerești</li>
+                <li>C(n,k) reprezintă combinări de n luate câte k</li>
+            </ul>
+        </div>
+        
+        <div class="input-group">
+            <label for="totalNumbers">Numărul total de numere (N):</label>
+            <input type="number" id="totalNumbers" value="80" min="1">
+        </div>
+        
+        <div class="input-group">
+            <label for="drawnNumbers">Numărul de numere extrase (K):</label>
+            <input type="number" id="drawnNumbers" value="20" min="1">
+        </div>
+        
+        <div class="input-group">
+            <label for="pickedNumbers">Numărul de numere pe care le alegi (n):</label>
+            <input type="number" id="pickedNumbers" value="5" min="1">
+        </div>
+        
+        <button onclick="calculateProbability()">Calculează probabilitatea</button>
+        
+        <div class="results" id="results">
+            <p>Completați valorile și apăsați butonul pentru a calcula.</p>
+        </div>
+    </div>
+    
+    <script>
+        function factorial(n) {
+            if (n === 0 || n === 1) return 1;
+            let result = 1;
+            for (let i = 2; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        
+        function combinations(n, k) {
+            // Folosim o metodă mai eficientă pentru a calcula combinări mari
+            if (k < 0 || k > n) return 0;
+            if (k === 0 || k === n) return 1;
+            if (k > n - k) k = n - k;
+            
+            let result = 1;
+            for (let i = 1; i <= k; i++) {
+                result *= (n - k + i) / i;
+            }
+            
+            return Math.round(result);
+        }
+        
+        function hypergeometricProbability(N, K, n, k) {
+            // P(X = k) = [C(K,k) × C(N-K,n-k)] / C(N,n)
+            const numerator = combinations(K, k) * combinations(N - K, n - k);
+            const denominator = combinations(N, n);
+            return numerator / denominator;
+        }
+        
+        function calculateProbability() {
+            const N = parseInt(document.getElementById('totalNumbers').value);
+            const K = parseInt(document.getElementById('drawnNumbers').value);
+            const n = parseInt(document.getElementById('pickedNumbers').value);
+            
+            let resultsDiv = document.getElementById('results');
+            
+            // Validare
+            if (isNaN(N) || isNaN(K) || isNaN(n) || N <= 0 || K <= 0 || n <= 0) {
+                resultsDiv.innerHTML = '<p class="error">Toate valorile trebuie să fie numere pozitive.</p>';
+                return;
+            }
+            
+            if (K > N) {
+                resultsDiv.innerHTML = '<p class="error">Numărul de numere extrase nu poate fi mai mare decât numărul total.</p>';
+                return;
+            }
+            
+            if (n > N) {
+                resultsDiv.innerHTML = '<p class="error">Numărul de numere alese nu poate fi mai mare decât numărul total.</p>';
+                return;
+            }
+            
+            let results = '<h3>Rezultate pentru N=' + N + ', K=' + K + ', n=' + n + ':</h3>';
+            
+            // Calculăm pentru fiecare caz: k=n până la k=0
+            for (let k = Math.min(n, K); k >= Math.max(0, n - (N - K)); k--) {
+                const probability = hypergeometricProbability(N, K, n, k);
+                const percentage = (probability * 100).toFixed(4);
+                
+                results += '<p>Probabilitatea de a nimeri exact <span class="highlight">' + k + 
+                           '</span> din ' + n + ': <span class="highlight">' + 
+                           percentage + '%</span></p>';
+            }
+            
+            resultsDiv.innerHTML = results;
+        }
+        
+        // Calculăm valorile implicite la încărcarea paginii
+        window.onload = calculateProbability;
+    </script>
+</body>
+</html>

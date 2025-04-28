@@ -1,0 +1,548 @@
+
+    <!DOCTYPE html>
+    <html lang="ro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Raport Frecvență Numere KINO</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f9;
+                color: #333;
+            }
+            .container {
+                max-width: 1000px;
+                margin: auto;
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            h1 {
+                text-align: center;
+                color: #2c3e50;
+            }
+            h2 {
+                color: #34495e;
+                margin-top: 20px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #3498db;
+                color: white;
+            }
+            tr:hover {
+                background-color: #f1f1f1;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 20px auto;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            .highlight-max {
+                color: #27ae60;
+                font-weight: bold;
+            }
+            .highlight-min {
+                color: #c0392b;
+                font-weight: bold;
+            }
+            @media (max-width: 600px) {
+                .container {
+                    padding: 10px;
+                }
+                th, td {
+                    padding: 8px;
+                    font-size: 14px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Raport Frecvență Numere KINO</h1>
+            <h2>Rezumat General</h2>
+            <p><strong>Fișiere procesate:</strong> 4</p>
+            <p><strong>Extrageri procesate:</strong> 29635</p>
+            <h2>Analiză Frecvențe</h2>
+            <p><strong>Numărul cu cea mai mare frecvență:</strong> Numărul <span class="highlight-max">39</span> cu <span class="highlight-max">7574</span> apariții</p>
+            <p><strong>Numărul cu cea mai mică frecvență:</strong> Numărul <span class="highlight-min">18</span> cu <span class="highlight-min">7200</span> apariții</p>
+            <h2>Distribuția Frecvențelor</h2>
+            <table id="frequencyTable">
+                <thead>
+                    <tr>
+                        <th>Număr</th>
+                        <th>Frecvență</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td>1</td>
+                        <td>7389</td>
+                    </tr>
+        
+                    <tr>
+                        <td>2</td>
+                        <td>7259</td>
+                    </tr>
+        
+                    <tr>
+                        <td>3</td>
+                        <td>7421</td>
+                    </tr>
+        
+                    <tr>
+                        <td>4</td>
+                        <td>7386</td>
+                    </tr>
+        
+                    <tr>
+                        <td>5</td>
+                        <td>7381</td>
+                    </tr>
+        
+                    <tr>
+                        <td>6</td>
+                        <td>7327</td>
+                    </tr>
+        
+                    <tr>
+                        <td>7</td>
+                        <td>7526</td>
+                    </tr>
+        
+                    <tr>
+                        <td>8</td>
+                        <td>7435</td>
+                    </tr>
+        
+                    <tr>
+                        <td>9</td>
+                        <td>7537</td>
+                    </tr>
+        
+                    <tr>
+                        <td>10</td>
+                        <td>7422</td>
+                    </tr>
+        
+                    <tr>
+                        <td>11</td>
+                        <td>7345</td>
+                    </tr>
+        
+                    <tr>
+                        <td>12</td>
+                        <td>7295</td>
+                    </tr>
+        
+                    <tr>
+                        <td>13</td>
+                        <td>7512</td>
+                    </tr>
+        
+                    <tr>
+                        <td>14</td>
+                        <td>7406</td>
+                    </tr>
+        
+                    <tr>
+                        <td>15</td>
+                        <td>7509</td>
+                    </tr>
+        
+                    <tr>
+                        <td>16</td>
+                        <td>7502</td>
+                    </tr>
+        
+                    <tr>
+                        <td>17</td>
+                        <td>7304</td>
+                    </tr>
+        
+                    <tr>
+                        <td>18</td>
+                        <td>7200</td>
+                    </tr>
+        
+                    <tr>
+                        <td>19</td>
+                        <td>7332</td>
+                    </tr>
+        
+                    <tr>
+                        <td>20</td>
+                        <td>7473</td>
+                    </tr>
+        
+                    <tr>
+                        <td>21</td>
+                        <td>7398</td>
+                    </tr>
+        
+                    <tr>
+                        <td>22</td>
+                        <td>7483</td>
+                    </tr>
+        
+                    <tr>
+                        <td>23</td>
+                        <td>7258</td>
+                    </tr>
+        
+                    <tr>
+                        <td>24</td>
+                        <td>7485</td>
+                    </tr>
+        
+                    <tr>
+                        <td>25</td>
+                        <td>7357</td>
+                    </tr>
+        
+                    <tr>
+                        <td>26</td>
+                        <td>7407</td>
+                    </tr>
+        
+                    <tr>
+                        <td>27</td>
+                        <td>7487</td>
+                    </tr>
+        
+                    <tr>
+                        <td>28</td>
+                        <td>7420</td>
+                    </tr>
+        
+                    <tr>
+                        <td>29</td>
+                        <td>7389</td>
+                    </tr>
+        
+                    <tr>
+                        <td>30</td>
+                        <td>7414</td>
+                    </tr>
+        
+                    <tr>
+                        <td>31</td>
+                        <td>7389</td>
+                    </tr>
+        
+                    <tr>
+                        <td>32</td>
+                        <td>7495</td>
+                    </tr>
+        
+                    <tr>
+                        <td>33</td>
+                        <td>7525</td>
+                    </tr>
+        
+                    <tr>
+                        <td>34</td>
+                        <td>7374</td>
+                    </tr>
+        
+                    <tr>
+                        <td>35</td>
+                        <td>7392</td>
+                    </tr>
+        
+                    <tr>
+                        <td>36</td>
+                        <td>7376</td>
+                    </tr>
+        
+                    <tr>
+                        <td>37</td>
+                        <td>7323</td>
+                    </tr>
+        
+                    <tr>
+                        <td>38</td>
+                        <td>7451</td>
+                    </tr>
+        
+                    <tr>
+                        <td>39</td>
+                        <td>7574</td>
+                    </tr>
+        
+                    <tr>
+                        <td>40</td>
+                        <td>7455</td>
+                    </tr>
+        
+                    <tr>
+                        <td>41</td>
+                        <td>7308</td>
+                    </tr>
+        
+                    <tr>
+                        <td>42</td>
+                        <td>7312</td>
+                    </tr>
+        
+                    <tr>
+                        <td>43</td>
+                        <td>7386</td>
+                    </tr>
+        
+                    <tr>
+                        <td>44</td>
+                        <td>7496</td>
+                    </tr>
+        
+                    <tr>
+                        <td>45</td>
+                        <td>7267</td>
+                    </tr>
+        
+                    <tr>
+                        <td>46</td>
+                        <td>7256</td>
+                    </tr>
+        
+                    <tr>
+                        <td>47</td>
+                        <td>7414</td>
+                    </tr>
+        
+                    <tr>
+                        <td>48</td>
+                        <td>7372</td>
+                    </tr>
+        
+                    <tr>
+                        <td>49</td>
+                        <td>7446</td>
+                    </tr>
+        
+                    <tr>
+                        <td>50</td>
+                        <td>7419</td>
+                    </tr>
+        
+                    <tr>
+                        <td>51</td>
+                        <td>7357</td>
+                    </tr>
+        
+                    <tr>
+                        <td>52</td>
+                        <td>7467</td>
+                    </tr>
+        
+                    <tr>
+                        <td>53</td>
+                        <td>7449</td>
+                    </tr>
+        
+                    <tr>
+                        <td>54</td>
+                        <td>7401</td>
+                    </tr>
+        
+                    <tr>
+                        <td>55</td>
+                        <td>7422</td>
+                    </tr>
+        
+                    <tr>
+                        <td>56</td>
+                        <td>7338</td>
+                    </tr>
+        
+                    <tr>
+                        <td>57</td>
+                        <td>7422</td>
+                    </tr>
+        
+                    <tr>
+                        <td>58</td>
+                        <td>7392</td>
+                    </tr>
+        
+                    <tr>
+                        <td>59</td>
+                        <td>7518</td>
+                    </tr>
+        
+                    <tr>
+                        <td>60</td>
+                        <td>7447</td>
+                    </tr>
+        
+                    <tr>
+                        <td>61</td>
+                        <td>7385</td>
+                    </tr>
+        
+                    <tr>
+                        <td>62</td>
+                        <td>7482</td>
+                    </tr>
+        
+                    <tr>
+                        <td>63</td>
+                        <td>7525</td>
+                    </tr>
+        
+                    <tr>
+                        <td>64</td>
+                        <td>7425</td>
+                    </tr>
+        
+                    <tr>
+                        <td>65</td>
+                        <td>7386</td>
+                    </tr>
+        
+                    <tr>
+                        <td>66</td>
+                        <td>7500</td>
+                    </tr>
+        
+                    <tr>
+                        <td>67</td>
+                        <td>7438</td>
+                    </tr>
+        
+                    <tr>
+                        <td>68</td>
+                        <td>7402</td>
+                    </tr>
+        
+                    <tr>
+                        <td>69</td>
+                        <td>7210</td>
+                    </tr>
+        
+                    <tr>
+                        <td>70</td>
+                        <td>7504</td>
+                    </tr>
+        
+                    <tr>
+                        <td>71</td>
+                        <td>7364</td>
+                    </tr>
+        
+                    <tr>
+                        <td>72</td>
+                        <td>7421</td>
+                    </tr>
+        
+                    <tr>
+                        <td>73</td>
+                        <td>7425</td>
+                    </tr>
+        
+                    <tr>
+                        <td>74</td>
+                        <td>7467</td>
+                    </tr>
+        
+                    <tr>
+                        <td>75</td>
+                        <td>7359</td>
+                    </tr>
+        
+                    <tr>
+                        <td>76</td>
+                        <td>7450</td>
+                    </tr>
+        
+                    <tr>
+                        <td>77</td>
+                        <td>7425</td>
+                    </tr>
+        
+                    <tr>
+                        <td>78</td>
+                        <td>7430</td>
+                    </tr>
+        
+                    <tr>
+                        <td>79</td>
+                        <td>7483</td>
+                    </tr>
+        
+                    <tr>
+                        <td>80</td>
+                        <td>7317</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+            <h2>Grafic Frecvențe</h2>
+            <img src="frequency_plot.png" alt="Grafic Frecvențe Numere KINO">
+        </div>
+        <script>
+            // Adaugă interactivitate pentru sortarea tabelului
+            function sortTable(n) {
+                let table = document.getElementById("frequencyTable");
+                let rows, switching = true;
+                let i, shouldSwitch, dir = "asc", switchcount = 0;
+                while (switching) {
+                    switching = false;
+                    rows = table.rows;
+                    for (i = 1; i < (rows.length - 1); i++) {
+                        shouldSwitch = false;
+                        let x = rows[i].getElementsByTagName("TD")[n];
+                        let y = rows[i + 1].getElementsByTagName("TD")[n];
+                        let xVal = isNaN(parseInt(x.innerHTML)) ? x.innerHTML.toLowerCase() : parseInt(x.innerHTML);
+                        let yVal = isNaN(parseInt(y.innerHTML)) ? y.innerHTML.toLowerCase() : parseInt(y.innerHTML);
+                        if (dir == "asc") {
+                            if (xVal > yVal) {
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else if (dir == "desc") {
+                            if (xVal < yVal) {
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        switchcount++;
+                    } else {
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
+
+            // Adaugă evenimente de click pe anteturile tabelului
+            document.querySelectorAll('#frequencyTable th').forEach((th, index) => {
+                th.addEventListener('click', () => sortTable(index));
+                th.style.cursor = 'pointer';
+            });
+        </script>
+    </body>
+    </html>
+    
